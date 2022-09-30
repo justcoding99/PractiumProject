@@ -21,7 +21,8 @@ public class Employee {
     }
 
     /**
-     *
+     * Calculates tax of emp. salary
+     * if less than 1000 no tax, otherwise %3 of salary
      * @param salary
      * @return
      */
@@ -33,15 +34,24 @@ public class Employee {
         }
     }
 
+    /**
+     * Calculates bonus of emp. salary
+     * if more than 40 hours 30 for each hour bonus otherwise no bonus
+     * @param workHours
+     * @return
+     */
     public double bonus(double workHours) {
-        if (workHours > 10) {
+        if (workHours > 40) {
             return workHours * 30;
         } else
             return 0;
     }
 
     /**
-     *
+     * Calculates raise salary amount of emp. salary
+     * if less than 10 years experienced emp. 5% raise
+     * or less than 20 years and more than 9 experineced emp. 10% raise
+     * otherwise more than 19 years experienced emp. 15% raise
      * @param salary
      * @param hireYear
      * @return
@@ -56,6 +66,10 @@ public class Employee {
         }
     }
 
+    /**
+     * Views info of Employee
+     * @return
+     */
     @Override
     public String toString() {
         return "Employee{" +
@@ -66,6 +80,11 @@ public class Employee {
                 '}';
     }
 
+    /**
+     * Views details of salary for specific employee
+     * @param employee
+     * @return
+     */
     public String showInfo(Employee employee){
         return  "Tax is : "
                 + employee.tax(employee.salary) + " bonus is : "
